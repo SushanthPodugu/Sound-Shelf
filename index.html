@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoundShelf | Equipment Rentals</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">♫</span> SoundShelf</a>
+    <nav>
+  <a class="active" href="index.html">Explore gear</a>
+  <a href="#my-bookings">My bookings</a>
+</nav>
+    <button class="cart-button" id="cart-toggle">My list <span id="cart-count">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">MAKE SOMETHING SOUND GREAT</p>
+        <h1>Good gear.<br><em>Great sessions.</em></h1>
+        <p class="hero-sub">Rent the instruments and studio essentials you need, exactly when you need them.</p>
+        <a class="primary-btn" href="#catalogue">Explore equipment <span>↘</span></a>
+      </div>
+      <div class="hero-art">
+        <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+        <div class="hero-note">♫</div>
+        <div class="hero-tag tag-top">STUDIO READY</div>
+        <div class="hero-tag tag-bottom">PLAY YOUR WAY</div>
+        <div class="hero-caption">YOUR NEXT SOUND<br>STARTS HERE.</div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div><strong>01</strong><span>Browse quality gear</span></div><div><strong>02</strong><span>Choose your dates</span></div><div><strong>03</strong><span>Send a booking request</span></div>
+    </section>
+
+    <section class="catalogue section" id="catalogue">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE RENTAL COLLECTION</p><h2>Find your sound.</h2></div>
+        <p class="muted">From first rehearsal to final mix.</p>
+      </div>
+      <div class="toolbar">
+        <label class="search-box">⌕ <input id="search" type="search" placeholder="Search instruments, microphones..."></label>
+        <div class="filters" id="category-filters">
+          <button class="filter active" data-category="All">All gear</button>
+          <button class="filter" data-category="Instruments">Instruments</button>
+          <button class="filter" data-category="Audio">Audio</button>
+          <button class="filter" data-category="Studio">Studio</button>
+          <button class="filter" data-category="DJ">DJ & live</button>
+        </div>
+        <select id="sort-select" aria-label="Sort equipment"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option></select>
+      </div>
+      <div class="product-grid" id="product-grid"></div>
+    </section>
+
+    <section class="booking-section section" id="my-bookings">
+      <div class="section-heading"><div><p class="eyebrow">YOUR RENTALS</p><h2>Booking activity.</h2></div><p class="muted">Track requests and approval status.</p></div>
+      <div id="customer-bookings" class="booking-list"></div>
+    </section>
+  </main>
+
+  <aside class="cart-drawer" id="cart-drawer" aria-hidden="true">
+    <div class="drawer-head"><div><p class="eyebrow">YOUR SHORTLIST</p><h2>Rental list</h2></div><button class="icon-btn" id="close-cart" aria-label="Close">×</button></div>
+    <div id="cart-items"></div>
+    <div class="checkout">
+      <label>Rental start date<input type="date" id="start-date"></label>
+      <label>Rental end date<input type="date" id="end-date"></label>
+      <label>Your name<input type="text" id="customer-name" placeholder="Enter your name"></label>
+      <label>Contact number<input type="tel" id="customer-phone" placeholder="Enter phone number"></label>
+      <p class="checkout-total">Estimated total <strong id="cart-total">₹0</strong></p>
+      <button class="primary-btn full" id="submit-booking">Send booking request ↗</button>
+      <p class="small muted">Your request is sent to the store owner for approval. No online payment is collected.</p>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+  <footer><a class="brand" href="#"><span class="brand-mark">♫</span> SoundShelf</a><span>Gear for every kind of session.</span><div class="owner-access">
+  <a href="owner.html">Owner Access ↗</a>
+</div></footer>
+  <div class="toast" id="toast" role="status"></div>
+</body>
+</html>
